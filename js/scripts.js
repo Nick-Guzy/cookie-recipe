@@ -16,26 +16,22 @@
 //     img.style.height = "700px";
 //   };
 // }
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
 window.onload = function() {
+  document.body.onmousemove = function() {
+    let randomBGColor = randomColor();
+    document.body.style.backgroundColor = randomBGColor;
+  }
+}
+
+function randomColor() {
   // let body = document.querySelector("body");
-  let h1 = document.querySelector("h1");
-  h1.onmouseover = function bob() {
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-    let number = console.log(getRandomInt(256));
-  };
-  h1.onmouseover = function bb() {
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-    let number = console.log(getRandomInt(256));
-  };
-  h1.onmouseover = function b() {
-    function getRandomInt(max) {
-      return Math.floor(Math.random() * max);
-    }
-    let number = console.log(getRandomInt(256));
-  };
+  let first = getRandomInt(256);
+  let second = getRandomInt(256);
+  let third = getRandomInt(256);
+  // let colorString = "rgb(" + first + ", " + second + ", " + third + ")";
+  let colorString = `rgb(${first}, ${second}, ${third})`;
+  return colorString;
 }
